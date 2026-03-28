@@ -1,55 +1,242 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Happy Birthday 💖</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dakshu Dii 🎉</title>
+
 <style>
 body{
 margin:0;
-padding:0;
-background:linear-gradient(to right,#ff9a9e,#fad0c4);
-font-family:Comic Sans MS;
+font-family:'Comic Sans MS',cursive;
+background:white;
 overflow:hidden;
-text-align:center;
 }
 
-h1{
-margin-top:20%;
-font-size:40px;
-color:white;
-}
-
+/* Page */
 .page{
 position:absolute;
-width:200px;
-height:200px;
-background:white;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:360px;
+height:520px;
+background:#ff4d4d;
 border-radius:20px;
-display:flex;
+display:none;
+flex-direction:column;
 align-items:center;
 justify-content:center;
-box-shadow:0 0 20px rgba(0,0,0,0.2);
-animation:float 6s infinite ease-in-out;
+text-align:center;
+color:white;
+box-shadow:0 0 25px rgba(0,0,0,0.3);
+padding:15px;
 }
 
-.page:nth-child(2){top:10%; left:20%;}
-.page:nth-child(3){top:50%; left:70%;}
-.page:nth-child(4){top:70%; left:30%;}
+.active{display:flex;}
+
+button{
+margin:8px;
+padding:10px 15px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4d4d;
+font-weight:bold;
+}
+
+/* Balloons */
+.balloon{
+position:absolute;
+bottom:-100px;
+width:50px;
+height:70px;
+background:pink;
+border-radius:50%;
+animation:float 6s infinite;
+}
+.balloon:nth-child(1){left:10%;}
+.balloon:nth-child(2){left:50%;}
+.balloon:nth-child(3){left:80%;}
 
 @keyframes float{
 0%{transform:translateY(0);}
-50%{transform:translateY(-30px);}
-100%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* Gifts */
+.gift{
+width:100px;
+height:100px;
+background:white;
+color:#ff4d4d;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:10px;
+border-radius:10px;
+cursor:pointer;
+animation:shake 1s infinite;
+}
+
+@keyframes shake{
+0%{transform:rotate(0);}
+25%{transform:rotate(3deg);}
+50%{transform:rotate(-3deg);}
+75%{transform:rotate(3deg);}
+100%{transform:rotate(0);}
+}
+
+/* Photo Grid */
+.photo-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+align-items:center;
+justify-items:center;
+width:100%;
+}
+
+.photo-grid img{
+width:100%;
+height:80px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.center{
+grid-column: span 2;
+}
+
+/* Bubble */
+.bubble{
+background:white;
+color:#ff4d4d;
+padding:10px;
+border-radius:20px;
+font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Happy Birthday Bestie 💖</h1>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
 
-<div class="page">You are special 💫</div>
-<div class="page">Stay happy always 😊</div>
-<div class="page">My fav person ❤️</div>
+<!-- PAGE 1 -->
+<div class="page active">
+<h1>🎉 Happy Birthday Dakshu Dii 🎉</h1>
+<button onclick="nextPage(1)">Next ➡️</button>
+</div>
+
+<!-- PAGE 2 (GIFTS) -->
+<div class="page">
+<h2>🎁 Open Gifts 🎁</h2>
+<div style="display:flex;">
+<div class="gift" onclick="goToPage(2)">Gift 1</div>
+<div class="gift" onclick="goToPage(3)">Gift 2</div>
+</div>
+<button onclick="prevPage(1)">⬅️ Back</button>
+<button onclick="nextPage(2)">Next ➡️</button>
+</div>
+
+<!-- PAGE 3 (LETTER 1) -->
+<div class="page">
+<p>You are the best person ever 💖</p>
+<button onclick="goToPage(1)">⬅️ Back</button>
+</div>
+
+<!-- PAGE 4 (LETTER 2) -->
+<div class="page">
+<p>Stay happy always 😇</p>
+<button onclick="goToPage(1)">⬅️ Back</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+<div class="photo-grid">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+
+<div class="bubble center">Cutie 💖</div>
+
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+</div>
+
+<button onclick="prevPage(4)">⬅️ Back</button>
+<button onclick="nextPage(5)">Next ➡️</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+<div class="photo-grid">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+
+<div class="bubble center">Beautiful ✨</div>
+
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
+</div>
+
+<button onclick="prevPage(5)">⬅️ Back</button>
+<button onclick="nextPage(6)">Next ➡️</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+<div class="photo-grid">
+<img src="photo11.jpg">
+<img src="photo12.jpg">
+
+<div class="bubble center">Fav Person ❤️</div>
+
+<img src="photo13.jpg">
+<img src="photo14.jpg">
+<img src="photo15.jpg">
+</div>
+
+<button onclick="prevPage(6)">⬅️ Back</button>
+<button onclick="nextPage(7)">Next ➡️</button>
+</div>
+
+<!-- PAGE 8 FINAL -->
+<div class="page">
+<p>
+Have a grateful year ahead 🌟<br>
+Always stay happy 😊<br>
+Our wishes are with you 💖
+</p>
+
+<p>Regards,<br>Srushti & Atharv</p>
+
+<button onclick="prevPage(7)">⬅️ Back</button>
+</div>
+
+<script>
+let pages = document.querySelectorAll(".page");
+
+function nextPage(i){
+pages[i-1].classList.remove("active");
+pages[i].classList.add("active");
+}
+
+function prevPage(i){
+pages[i].classList.remove("active");
+pages[i-1].classList.add("active");
+}
+
+function goToPage(i){
+pages.forEach(p=>p.classList.remove("active"));
+pages[i].classList.add("active");
+}
+</script>
 
 </body>
 </html>
