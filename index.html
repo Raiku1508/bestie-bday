@@ -6,268 +6,253 @@
 <title>Happy Birthday Dakshu Dii 🎉</title>
 
 <style>
-body{
-margin:0;
-font-family:'Comic Sans MS',cursive;
-background:white;
-overflow:hidden;
+body {
+  margin:0;
+  font-family: 'Comic Sans MS', cursive;
+  background:white;
+  overflow:hidden;
 }
 
-/* Page */
-.page{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:90%;
-max-width:360px;
-height:520px;
-background:#b30000;
-border-radius:20px;
-display:none;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-box-shadow:0 0 25px rgba(0,0,0,0.3);
-padding:15px;
+/* FLOATING PAGE */
+.page {
+  display:none;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:90%;
+  max-width:380px;
+  background:#b3002d;
+  color:white;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.active{display:flex;}
-
-button{
-margin:8px;
-padding:10px 15px;
-border:none;
-border-radius:10px;
-background:white;
-color:#b30000;
-font-weight:bold;
+/* ACTIVE PAGE */
+.active {
+  display:block;
 }
 
-/* Balloons */
-.balloon{
-position:absolute;
-bottom:-120px;
-width:50px;
-height:70px;
-background:#99004d;
-border-radius:50%;
-animation:float 6s infinite;
-}
-.balloon::after{
-content:"";
-position:absolute;
-top:70px;
-left:50%;
-width:2px;
-height:30px;
-background:#99004d;
-}
-.balloon::before{
-content:"🎀";
-position:absolute;
-top:95px;
-left:50%;
-transform:translateX(-50%);
-}
-.balloon:nth-child(1){left:10%;}
-.balloon:nth-child(2){left:50%;}
-.balloon:nth-child(3){left:80%;}
-
-@keyframes float{
-0%{transform:translateY(0);}
-100%{transform:translateY(-120vh);}
+/* BUTTONS */
+button {
+  margin:10px;
+  padding:8px 16px;
+  border:none;
+  border-radius:10px;
+  background:white;
+  color:#b3002d;
+  font-weight:bold;
 }
 
-/* Hearts */
-.heart{
-position:absolute;
-bottom:-50px;
-font-size:20px;
-animation:hearts 5s infinite;
-}
-.heart:nth-child(4){left:20%;}
-.heart:nth-child(5){left:60%;}
-.heart:nth-child(6){left:80%;}
-
-@keyframes hearts{
-0%{transform:translateY(0);}
-100%{transform:translateY(-120vh);}
+/* BALLOONS */
+.balloon {
+  position:absolute;
+  width:40px;
+  height:50px;
+  border-radius:50%;
+  animation:float 6s infinite;
 }
 
-/* Gifts */
-.gift{
-font-size:50px;
-cursor:pointer;
-animation:shake 1.2s infinite;
-}
-@keyframes shake{
-0%,100%{transform:translateX(0);}
-25%{transform:translateX(-5px);}
-50%{transform:translateX(5px);}
-75%{transform:translateX(-5px);}
+.balloon::after {
+  content:'';
+  position:absolute;
+  bottom:-15px;
+  left:50%;
+  width:2px;
+  height:20px;
+  background:black;
 }
 
-/* Photo Layout */
-.photo-layout{
-position:relative;
-width:100%;
-height:280px;
-}
-.photo-layout img{
-position:absolute;
-width:80px;
-height:80px;
-object-fit:cover;
-border-radius:10px;
+.balloon::before {
+  content:'🎀';
+  position:absolute;
+  bottom:-25px;
+  left:50%;
+  transform:translateX(-50%);
 }
 
-.photo1{top:0; left:10%;}
-.photo2{top:0; right:10%;}
-.photo3{bottom:0; left:10%;}
-.photo4{bottom:0; right:10%;}
-
-/* Center text */
-.center-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:white;
-color:#b30000;
-padding:10px 15px;
-border-radius:20px;
-font-weight:bold;
-z-index:2;
+@keyframes float {
+  0% {transform:translateY(0);}
+  100% {transform:translateY(-100vh);}
 }
 
-/* Final page images */
-.final-photos{
-display:flex;
-gap:10px;
-margin-top:15px;
+/* GIFT BOX */
+.gift {
+  font-size:60px;
+  cursor:pointer;
+  animation:shake 1s infinite;
 }
-.final-photos img{
-width:80px;
-height:80px;
-border-radius:10px;
-object-fit:cover;
+
+@keyframes shake {
+  0%{transform:rotate(0);}
+  25%{transform:rotate(5deg);}
+  50%{transform:rotate(0);}
+  75%{transform:rotate(-5deg);}
+}
+
+/* PHOTO GRID */
+.photo-container {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:10px;
+}
+
+.photo-container img {
+  width:140px;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  border:3px solid white;
+}
+
+/* SLANG */
+.slang {
+  grid-column:span 2;
+  background:white;
+  color:#b3002d;
+  padding:8px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+/* FINAL PAGE PHOTOS */
+.final-photos img {
+  width:160px;
+  height:200px;
+  margin:5px;
+  border-radius:10px;
+  border:3px solid white;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .photo-container img{
+    width:120px;
+    height:150px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="balloon"></div>
-<div class="balloon"></div>
-<div class="balloon"></div>
-
-<div class="heart">💖</div>
-<div class="heart">💗</div>
-<div class="heart">💞</div>
+<!-- BALLOONS -->
+<div class="balloon" style="left:10%; background:#ff4d4d;"></div>
+<div class="balloon" style="left:30%; background:#ff1a75;"></div>
+<div class="balloon" style="left:60%; background:#cc0066;"></div>
+<div class="balloon" style="left:80%; background:#99004d;"></div>
 
 <!-- PAGE 1 -->
 <div class="page active">
-<h1>🎉 Happy Birthday Dakshu Dii 🎉</h1>
-<button onclick="nextPage(1)">Next ➡️</button>
+  <h2>🎉 Happy Birthday Dakshu Dii 🎉</h2>
+  <p>🥳🎊</p>
+  <button onclick="nextPage()">Next ➡️</button>
 </div>
 
-<!-- PAGE 2 -->
+<!-- PAGE 2 (GIFTS) -->
 <div class="page">
-<h2>🎁 Open Gifts 🎁</h2>
-<div style="display:flex; gap:30px;">
-<div class="gift" onclick="goToPage(2)">🎁</div>
-<div class="gift" onclick="goToPage(3)">🎁</div>
-</div>
-<button onclick="prevPage(1)">⬅️ Back</button>
-<button onclick="nextPage(4)">Next ➡️</button>
+  <h3>Open Gifts 🎁</h3>
+  <div class="gift" onclick="openPage(2)">🎁</div>
+  <div class="gift" onclick="openPage(3)">🎁</div>
+  <br>
+  <button onclick="prevPage()">⬅️ Back</button>
+  <button onclick="goToPage(4)">Next ➡️</button>
 </div>
 
-<!-- LETTERS -->
+<!-- LETTER 1 -->
 <div class="page">
-<p>You are the best person ever 💖</p>
-<button onclick="goToPage(1)">⬅️ Back</button>
+  <p>You are the sweetest bestie ever 💖</p>
+  <button onclick="goToPage(1)">⬅️ Back</button>
 </div>
 
+<!-- LETTER 2 -->
 <div class="page">
-<p>Stay happy always 😇</p>
-<button onclick="goToPage(1)">⬅️ Back</button>
+  <p>Always stay happy and smiling 😊</p>
+  <button onclick="goToPage(1)">⬅️ Back</button>
 </div>
 
-<!-- PHOTO PAGES -->
+<!-- PAGE 3 -->
 <div class="page">
-<div class="photo-layout">
-<img src="images/photo1.jpeg" class="photo1">
-<img src="images/photo2.jpeg" class="photo2">
-<img src="images/photo3.jpeg" class="photo3">
-<img src="images/photo4.jpeg" class="photo4">
-<div class="center-text">Cutie 💖</div>
-</div>
-<button onclick="prevPage(4)">⬅️ Back</button>
-<button onclick="nextPage(5)">Next ➡️</button>
+  <div class="photo-container">
+    <div class="slang">Cutie 💖</div>
+    <img src="images/photo1.jpeg">
+    <img src="images/photo2.jpeg">
+    <img src="images/photo3.jpeg">
+    <img src="images/photo4.jpeg">
+    <img src="images/photo5.jpeg">
+  </div>
+  <button onclick="prevPage()">⬅️</button>
+  <button onclick="nextPage()">➡️</button>
 </div>
 
+<!-- PAGE 4 -->
 <div class="page">
-<div class="photo-layout">
-<img src="images/photo6.jpeg" class="photo1">
-<img src="images/photo7.jpeg" class="photo2">
-<img src="images/photo8.jpeg" class="photo3">
-<img src="images/photo9.jpeg" class="photo4">
-<div class="center-text">Beautiful ✨</div>
-</div>
-<button onclick="prevPage(5)">⬅️ Back</button>
-<button onclick="nextPage(6)">Next ➡️</button>
+  <div class="photo-container">
+    <div class="slang">Beautiful 😍</div>
+    <img src="images/photo6.jpeg">
+    <img src="images/photo7.jpeg">
+    <img src="images/photo8.jpeg">
+    <img src="images/photo9.jpeg">
+    <img src="images/photo10.jpeg">
+  </div>
+  <button onclick="prevPage()">⬅️</button>
+  <button onclick="nextPage()">➡️</button>
 </div>
 
+<!-- PAGE 5 -->
 <div class="page">
-<div class="photo-layout">
-<img src="images/photo12.jpeg" class="photo1">
-<img src="images/photo13.jpeg" class="photo2">
-<img src="images/photo14.jpeg" class="photo3">
-<img src="images/photo5.jpeg" class="photo4">
-<div class="center-text">Fav Person ❤️</div>
-</div>
-<button onclick="prevPage(6)">⬅️ Back</button>
-<button onclick="nextPage(7)">Next ➡️</button>
+  <div class="photo-container">
+    <div class="slang">Fav Person 💕</div>
+    <img src="images/photo11.jpeg">
+    <img src="images/photo12.jpeg">
+    <img src="images/photo13.jpeg">
+    <img src="images/photo14.jpeg">
+    <img src="images/photo15.jpeg">
+  </div>
+  <button onclick="prevPage()">⬅️</button>
+  <button onclick="nextPage()">➡️</button>
 </div>
 
 <!-- FINAL PAGE -->
 <div class="page">
-<p>
-Have a grateful year ahead 🌟<br>
-Always stay happy 😊<br>
-Our wishes are with you 💖
-</p>
-
-<div class="final-photos">
-<img src="images/photo10.jpeg">
-<img src="images/photo11.jpeg">
-<img src="images/photo15.jpeg">
-</div>
-
-<p>Regards,<br>Srushti & Atharv</p>
-
-<button onclick="prevPage(7)">⬅️ Back</button>
+  <h3>Have a wonderful year 💖</h3>
+  <p>Stay happy always 😊</p>
+  <div class="final-photos">
+    <img src="images/photo10.jpeg">
+    <img src="images/photo11.jpeg">
+    <img src="images/photo15.jpeg">
+  </div>
+  <p>Regards,<br>Srushti & Atharv 💕</p>
+  <button onclick="prevPage()">⬅️</button>
 </div>
 
 <script>
 let pages = document.querySelectorAll(".page");
+let current = 0;
 
-function nextPage(i){
-pages[i-1].classList.remove("active");
-pages[i].classList.add("active");
+function showPage(i){
+  pages[current].classList.remove("active");
+  current = i;
+  pages[current].classList.add("active");
 }
 
-function prevPage(i){
-pages[i].classList.remove("active");
-pages[i-1].classList.add("active");
+function nextPage(){
+  if(current < pages.length-1) showPage(current+1);
+}
+
+function prevPage(){
+  if(current > 0) showPage(current-1);
 }
 
 function goToPage(i){
-pages.forEach(p=>p.classList.remove("active"));
-pages[i].classList.add("active");
+  showPage(i);
+}
+
+function openPage(i){
+  showPage(i);
 }
 </script>
 
